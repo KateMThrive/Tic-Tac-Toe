@@ -2,7 +2,15 @@
 
 A modern implementation of the classic Tic-Tac-Toe game built with React and TypeScript.
 
-![Tic-Tac-Toe Game](https://via.placeholder.com/600x300?text=Tic-Tac-Toe+Game)
+```
++---+---+---+
+| X | O | X |
++---+---+---+
+| O | X | O |
++---+---+---+
+| X | O |   |
++---+---+---+
+```
 
 ## Overview
 
