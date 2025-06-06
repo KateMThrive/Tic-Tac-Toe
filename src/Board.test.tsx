@@ -1,9 +1,9 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import App from "./App";
+import Board from "./Board";
 
 test("renders learn react link", () => {
-  render(<App />);
+  render(<Board />);
   const squareButton = screen.queryAllByTestId("square");
   expect(squareButton).toHaveLength(9);
 });

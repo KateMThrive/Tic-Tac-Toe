@@ -1,3 +1,5 @@
+import styles from "./square.module.css";
+
 interface SquareProps {
   value: string;
   onClick: () => void;
@@ -5,7 +7,7 @@ interface SquareProps {
 
 function Square({ value, onClick }: SquareProps) {
   return (
-    <button className="square" data-testid="square" onClick={onClick}>
+    <button className={styles.square} data-testid="square" onClick={onClick}>
       {value}
     </button>
   );
