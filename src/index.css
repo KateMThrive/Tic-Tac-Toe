@@ -11,62 +11,34 @@ body {
 h1 {
   margin-top: 0;
   font-size: 22px;
+  text-align: center;
 }
 
-h2 {
-  margin-top: 0;
-  font-size: 20px;
-}
-
-h3 {
-  margin-top: 0;
-  font-size: 18px;
-}
-
-h4 {
-  margin-top: 0;
-  font-size: 16px;
-}
-
-h5 {
-  margin-top: 0;
-  font-size: 14px;
-}
-
-h6 {
-  margin-top: 0;
-  font-size: 12px;
-}
-
-code {
-  font-size: 1.2em;
-}
-
-ul {
-  padding-inline-start: 20px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif;
-  margin: 20px;
-  padding: 0;
-}
-
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
+ol {
+  margin-block-start: initial;
+  margin-block-end: initial;
+  padding-inline-start: initial;
 }
 
 .game {
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: calc(100dvw / 2);
+  height: calc(100dvh / 2);
+  background-color: lightgray;
+  border-radius: 10px;
+  margin: auto;
 }
 
 .game-info {
-  margin-left: 20px;
+  padding: 20px;
+}
+
+.game-field {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 170px;
+  width: 145px;
 }

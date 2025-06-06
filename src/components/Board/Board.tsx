@@ -1,12 +1,16 @@
-import { useState } from "react";
-import Square from "./components/Square/Square";
-import Status from "./components/Status/Status";
-import calculateWinner from "./helpers/calculateWinner";
-import { Mark } from "./types/marks";
+import calculateWinner from "../../helpers/calculateWinner";
+import { Mark } from "../../types/marks";
+import Square from "../Square/Square";
+import Status from "../Status/Status";
+import styles from "./board.module.css";
 
-export default function Board() {
-  const [squares, setSquares] = useState(Array(9).fill(null));
-  const [currentMark, setCurrentMark] = useState(Mark.X);
+interface BoardProps {
+  squares: (Mark | null)[];
+  currentMark: Mark | null;
+  onPlay: (nextSquares: (Mark | null)[]) => void;
+}
+
+const Board = ({ squares, currentMark, onPlay }: BoardProps) => {
   const boardSize = 3;
 
   const handleClick = (index: number) => {
@@ -17,8 +21,7 @@ export default function Board() {
 
     const nextSquares = squares.slice();
     nextSquares[index] = currentMark;
-    setCurrentMark(currentMark === Mark.X ? Mark.O : Mark.X);
-    setSquares(nextSquares);
+    onPlay(nextSquares);
   };
 
   return (
@@ -27,7 +30,7 @@ export default function Board() {
       {Array.from({ length: boardSize }).map((_, row) => {
         const rowStart = row * boardSize;
         return (
-          <div className="board-row" key={row}>
+          <div className={styles.boardRow} key={row}>
             {squares
               .slice(rowStart, rowStart + boardSize)
               .map((square, index) => {
@@ -45,4 +48,6 @@ export default function Board() {
       })}
     </>
   );
-}
+};
+
+export default Board;

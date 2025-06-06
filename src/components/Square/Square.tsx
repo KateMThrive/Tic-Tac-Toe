@@ -1,7 +1,7 @@
 import styles from "./square.module.css";
 
 interface SquareProps {
-  value: string;
+  value: string | null;
   onClick: () => void;
 }
 

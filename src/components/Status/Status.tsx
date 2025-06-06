@@ -4,7 +4,7 @@ import calculateWinner from "../../helpers/calculateWinner";
 
 interface StatusProps {
   squares: (Mark | null)[];
-  currentMark: Mark;
+  currentMark: Mark | null;
 }
 
 const Status = ({ squares, currentMark }: StatusProps) => {
